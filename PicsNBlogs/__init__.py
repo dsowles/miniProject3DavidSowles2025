@@ -29,19 +29,6 @@ def create_app(test_config=None):
     @app.route('/')
     def index():
         return render_template('index.html')
-
-    # a simple page that says hello
-    @app.route('/hello')
-    def hello():
-        return 'Hello, World!'
-    
-    @app.route('/pics')
-    def pics():
-        return '<h1>This Is The Pictures Page</h1>'
-    
-    @app.route('/blogs')
-    def blogs():
-        return '<h1>This Is The Blogs Page</h1>'
     
     # Import the database.
     # See https://flask.palletsprojects.com/en/stable/tutorial/database/
@@ -57,6 +44,13 @@ def create_app(test_config=None):
     # See https://flask.palletsprojects.com/en/stable/tutorial/blog/
     from . import blog
     app.register_blueprint(blog.bp)
+
+    # Import the Pics blueprints
+    from . import pics
+    app.register_blueprint(pics.bp)
+
     app.add_url_rule('/', endpoint='index')
+
+
 
     return app
