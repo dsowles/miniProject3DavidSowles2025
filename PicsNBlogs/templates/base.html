@@ -17,6 +17,11 @@
 <body class="bg-light">
     <!-- Navbar -->
     <header>
+        <div class="banner text-center py-4">
+            <h1 class="display-5 fw-bold mb-2">PicsNBlogs</h1>
+            <p class="lead mb-0">A Blog and Picture Sharing Webiste</p>
+        </div>
+
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <div class="container-fluid">
                 <a class="navbar-brand fw-bold" href="{{ url_for('index') }}">PicsNBlogs</a>
@@ -53,7 +58,7 @@
     <!-- Main content -->
     <main class="container my-5">
         <section class="content bg-white p-4 rounded shadow-sm">
-            <header class="mb-4 border-bottom pb-2">
+            <header class="content-header mb-4 border-bottom pb-2">
                 {% block header %}{% endblock %}
             </header>
 
@@ -68,6 +73,10 @@
             {% block content %}{% endblock %}
         </section>
     </main>
+
+    <footer>
+
+    </footer>
 
     <!-- Bootstrap JS -->
     <script 

@@ -15,10 +15,34 @@ a { color: #377ba8; }
 
 hr { border: none; border-top: 1px solid lightgray; }
 
+div.banner {
+    background-color: rgb(211, 211, 255);
+}
+
 /*****************/
 
+/* Header Styles */
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Push navbar to the bottom */
+    min-height: 10rem; /* Keeps space above navbar */
+    background: transparent; /* or any background color you want */
+    margin-bottom: 1rem;
+}
+/****************/
+
 /* Navbar styles */
-nav { background: lightgray; display: flex; align-items: center; padding: 0 0.5rem; }
+nav { 
+    background: lightgray; 
+    display: flex; 
+    align-items: center; 
+    padding: 0 0.5rem; 
+    width: 100%;
+    align-self: flex-end;
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* subtle line */
+}
 
 nav h1 { flex: auto; margin: 0; }
 nav h1 a { text-decoration: none; padding: 0.25rem 0.5rem; }
@@ -32,10 +56,15 @@ nav ul li a, nav ul li span, header .action { display: block; padding: 0.5rem; }
 
 /* Content area styles */
 
-.content { padding: 0 1rem 1rem; }
-.content > header { display: flex; align-items: flex-end; margin-bottom: 2.5rem;}
+.content { 
+    padding: 0 1rem 1rem;  
+    margin-bottom: .25rem;
+}
+.content > header { 
+    display: flex; align-items: flex-start; 
+    margin-bottom: 2.5rem;
+}
 .content > header h1 { flex: auto; margin: 1rem 0 0.25rem 0; }
-
 .content:last-child { margin-bottom: 0; }
 .content form { margin: 1em 0; display: flex; flex-direction: column; }
 .content label { font-weight: bold; margin-bottom: 0.5em; }
@@ -51,8 +80,25 @@ nav ul li a, nav ul li span, header .action { display: block; padding: 0.5rem; }
 
 /* Post Styles */
 
-.post > header { display: flex; align-items: flex-end; font-size: 0.85em; }
-.post > header > div:first-of-type { flex: auto; }
+.post > header { 
+    align-items: left; /* centers the "Edit" link with the div containing title/author */
+    font-size: 0.85em;
+    flex-direction: row;
+}
+.post > header > div:first-of-type {
+    flex: 1; /* takes all remaining space */
+}
+
+.post > header a.action {
+    text-decoration: none;
+    color: #377ba8;
+    font-weight: bold;
+}
+
+.post > header a.action:hover {
+    text-decoration: underline;
+}
+
 .post > header h1 { font-size: 1.5em; margin-bottom: 0; }
 .post .about { color: slategray; font-style: italic; }
 .post .body { white-space: pre-line; }
