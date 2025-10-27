@@ -1,7 +1,7 @@
 
 import os
 
-from flask import Flask
+from flask import Flask, render_template
 
 
 def create_app(test_config=None):
@@ -28,7 +28,7 @@ def create_app(test_config=None):
     # The index route handler
     @app.route('/')
     def index():
-        return '<h1>Index</h1>'
+        return render_template('index.html')
 
     # a simple page that says hello
     @app.route('/hello')
