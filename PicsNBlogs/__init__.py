@@ -37,5 +37,9 @@ def create_app(test_config=None):
     @app.route('/blogs')
     def blogs():
         return '<h1>This Is The Blogs Page</h1>'
+    
+    
+    from . import db
+    db.init_app(app)
 
     return app
