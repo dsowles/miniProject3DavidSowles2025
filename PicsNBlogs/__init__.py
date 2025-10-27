@@ -38,8 +38,14 @@ def create_app(test_config=None):
     def blogs():
         return '<h1>This Is The Blogs Page</h1>'
     
-    
+    # Import the database.
+    # See https://flask.palletsprojects.com/en/stable/tutorial/database/
     from . import db
     db.init_app(app)
+
+    # Import the authorization blueprints.
+    # See https://flask.palletsprojects.com/en/stable/tutorial/views/
+    from . import auth
+    app.register_blueprint(auth.bp)
 
     return app
