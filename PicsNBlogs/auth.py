@@ -92,10 +92,8 @@ def login():
 
         flash(error)
 
-    #return render_template('auth/login.html')
+    return render_template('auth/login.html')
 
-    # DELETE THIS AND UNCOMMENT THE ABOVE ONCE TEMPLATES ARE CREATED
-    return "<h1>Login</h1>"
 
 
 ##################################
