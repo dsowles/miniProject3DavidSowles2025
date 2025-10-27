@@ -61,10 +61,7 @@ def register():
 
         flash(error)
 
-    #return render_template('auth/register.html')
-
-    # DELETE THIS AND UNCOMMENT THE ABOVE ONCE TEMPLATES ARE CREATED
-    return "<h1>Register</h1>"
+    return render_template('auth/register.html')
 
 ######################################
 
